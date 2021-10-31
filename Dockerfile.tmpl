@@ -39,6 +39,8 @@ ARG TORCHVISION_VERSION
 ENV KMP_WARNINGS=0
 
 ADD clean-layer.sh  /tmp/clean-layer.sh
+# Add permissions to resolve the error 
+RUN chmod +x /tmp/clean-layer.sh
 ADD patches/nbconvert-extensions.tpl /opt/kaggle/nbconvert-extensions.tpl
 ADD patches/template_conf.json /opt/kaggle/conf.json
 
